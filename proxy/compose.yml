@@ -4,17 +4,21 @@ services:
     image: caddy:2-alpine
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8080:80"
+      - "127.0.0.1:8080:8080"
+    networks:
+      proxy-net:
+        aliases:
+          - auth.localhost
+          - rallly.localhost
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
       - caddy_config:/config
-    networks:
-      - proxy-net
 
 networks:
   proxy-net:
-    external: true
+    name: proxy-net
+    driver: bridge
 
 volumes:
   caddy_data:

@@ -10,4 +10,7 @@ docker compose \
 echo "Démarrage de Rallly..."
 docker compose -f compose.yml up -d
 
+echo "Démarrage de Rallly..."
+docker compose -f proxy/compose.yml up -d
+
 echo "Infrastructure démarrée."

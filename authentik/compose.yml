@@ -40,6 +40,9 @@ services:
     volumes:
     - ./data:/data
     - ./custom-templates:/templates
+    networks:
+    - default
+    - proxy-net
   worker:
     command: worker
     depends_on:
@@ -65,3 +68,8 @@ services:
 volumes:
   database:
     driver: local
+
+networks:
+  proxy-net:
+    name: proxy-net
+    driver: bridge

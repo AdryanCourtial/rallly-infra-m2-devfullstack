@@ -18,6 +18,9 @@ services:
             OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET}
         depends_on:
             - rallly_db
+        networks:
+            - default
+            - proxy-net
 
     rallly_db:
         image: postgres:18-alpine
@@ -102,3 +105,7 @@ volumes:
   garage-data:
     driver: local
 
+networks:
+  proxy-net:
+    name: proxy-net
+    driver: bridge

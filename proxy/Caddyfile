@@ -1,7 +1,7 @@
-http://rallly.localhost {
+http://rallly.localhost:8080 {
     reverse_proxy rallly_selfhosted:3000
 }
 
-http://auth.localhost {
+http://auth.localhost:8080 {
     reverse_proxy server:9000
 }
