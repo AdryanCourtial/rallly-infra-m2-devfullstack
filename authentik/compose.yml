@@ -71,5 +71,5 @@ volumes:
 
 networks:
   proxy-net:
+    external: true
     name: proxy-net
-    driver: bridge
