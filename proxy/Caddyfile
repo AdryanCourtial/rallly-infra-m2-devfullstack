@@ -5,3 +5,11 @@ http://rallly.localhost:8080 {
 http://auth.localhost:8080 {
     reverse_proxy server:9000
 }
+
+http://10.2.192.11:8080 {
+    reverse_proxy rallly_selfhosted:3000
+}
+
+http://10.2.192.11:8081 {
+    reverse_proxy server:9000
+}
