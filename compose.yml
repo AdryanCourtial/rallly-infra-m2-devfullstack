@@ -1,6 +1,6 @@
 services:
     rallly_selfhosted:
-        image: ghcr.io/richetinb/fork-rallly-m2-devfullstack:sha-179fa11
+        image: ghcr.io/rally-ynov/fork-rallly-m2-devfullstack:main
         restart: unless-stopped
         ports:
             - "3000:3000"
