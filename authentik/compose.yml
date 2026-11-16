@@ -26,6 +26,7 @@ services:
     env_file:
     - .env
     environment:
+      AUTHENTIK_WEB__WORKERS: "1"
       AUTHENTIK_POSTGRESQL__HOST: postgresql
       AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
       AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
